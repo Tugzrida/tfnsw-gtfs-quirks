@@ -1,0 +1,79 @@
+# sydneytrains
+
+An acronym I'll be using quite a lot here is ATRICS (Advanced Train Running Information Control System). ATRICS is a computerised signalling interface being rolled out by Sydney Trains. The boundaries of ATRICS territory are (as of April 2024):
+- North: Vales Point (excl)
+- West: Newnes Junction (incl)
+- South: Macarthur (incl)
+- South Coast: Waterfall (excl)
+
+Beyond this area, the Sydney-Trains-controlled network extends to Newcastle Interchange/Woodville Junction(North), Lithgow(West), and Bomaderry/Port Kembla (South Coast). Outside ATRICS territory, other systems such as push button panels, lever frames, and older computerised signalling interfaces are used.
+
+## Coverage
+### GTFS timetable
+The sydneytrains [GTFS timetable - for realtime](https://opendata.transport.nsw.gov.au/dataset/public-transport-timetables-realtime) contains timetable data for all Sydney Trains and NSW TrainLink services, however NSW TrainLink diesel services are often better represented in the nswtrains timetable.
+
+### GTFS-R
+There are two sydneytrains GTFS-R `vehiclepos` feeds. TfNSW recommends use of the v2 feed. The only data exclusive to v1 is [F and W freight trains](#f-and-w-sets), whereas v2 has coverage of more area, train type/length updates, and live occupancy(Waratah only).
+
+- [v1](https://opendata.transport.nsw.gov.au/dataset/public-transport-realtime-vehicle-positions): Covers all ATRICS territory, plus the `NIF` region.
+
+- [v2](https://opendata.transport.nsw.gov.au/dataset/public-transport-realtime-vehicle-positions-v2): Covers all ATRICS territory, plus the `NIF`, `MetroNet` & `SouthCoast` regions. This represents all of the Sydney-Trains-controlled network except Kiama–Bomaderry, which is also the only unelectrified region controlled by Sydney Trains.
+
+More details on regions and locations can be found [here](locations/README.md).
+
+## `vehiclepos` GTFS-R feed
+The `vehiclepos` feed is generated every 10 seconds, with the last generation time provided in the `header.timestamp` field of the protobuf.
+
+### `trip.trip_id`
+The most common form of trip_id, `65-X.1905.101.56.M.8.81177383`, contains various information about the service as described in TfNSW documentation. Timetable information for such services is given in the GTFS timetable or GTFS-R `realtime` feed for ad-hoc or altered services.
+
+Next, there are IDs that start with `NonTimetabled.` followed by a train description/run number. In the majority of cases, these are out-of-service passenger train transfers, freight, or maintenance vehicles. However, sometimes normal passenger services will revert to reporting as NonTimetabled if they are significantly delayed or altered, which can make it annoying to properly correlate them to a timetable entry.
+
+There is also usually a surge in NonTimetabled vehicles overnight when the system rolls over to the next day's timetable and run numbers can no longer be found in the new timetable, and as run numbers are entered at yards for the first trains out in the morning.
+
+Another NonTimetabled case is the form of `NonTimetabled.U001`, where 001 may be any three digits. I don't know what the U is supposed to stand for, but in my mind it's 'undescribed', as these will often appear at the exit from a yard when a train is waiting on the track and the signaller hasn't yet labelled it with its run number.
+
+NonTimetabled vehicles only appear in the feeds when within ATRICS territory, and Mariyung/D set trains in [the `NIF` region](locations/README.md#nif).
+
+#### F and W sets
+On 18 November 2023 some freight trains, which used to exclusively report as NonTimetabled, changed to reporting with the standard passenger `trip_id` format, using the set types F or W, 0 carriages, and in the v1 feed only. W is defined as "Fast freight" by Sydney Trains, but F is not defined. Sydney Trains do define G for "Freight", however I've never seen it used.
+
+I haven't been able to find a pattern to the use of F or W, other than W being much more common. A given train will generally consistently appear as F, W or NonTimetabled day-to-day, and it seems that most trains that run to a consistent timetable appear as F or W, whereas irregular freight services generally remain as NonTimetabled.
+
+I was interested as to whether this change might mean that freight services would appear in the GTFS timetable or be visible outside ATRICS territory, however neither of these have eventuated.
+
+### `position` / `stop_id`
+None of the positions reported in the sydneytrains `vehiclepos` feed are directly sourced from onboard GPS. The `stop_id` field contains an ID consisting of a dot-separated region name and location, the lat/long of which are included in the `position` fields. Further detail is documented [here](locations/README.md).
+
+### `timestamp`
+The Unix timestamp when the vehicle position last changed.
+
+There are numerous locations around the network at which the timestamp never seems to update. There is honestly an endless well of edge cases here but a strategy similar to this should keep the vehicle's timestamp close to the correct "last moved" time:
+
+```python
+# init
+prevLocations = {}
+prevTimestamps = {}
+
+# inside fetch loop
+for entity in vehiclepos.entity:
+    if entity.vehicle.stop_id != prevLocations.get(entity.vehicle.trip.trip_id):
+        # vehicle moved
+        if entity.vehicle.timestamp == prevTimestamps.get(entity.vehicle.trip.trip_id):
+            # vehicle moved but timestamp not updated, use header timestamp
+            entity.vehicle.timestamp = vehiclepos.header.timestamp
+
+        # save location and potentially corrected timestamp for next loop
+        prevLocations[entity.vehicle.trip.trip_id] = entity.vehicle.stop_id
+        prevTimestamps[entity.vehicle.trip.trip_id] = entity.vehicle.timestamp
+    else:
+        # vehicle not moved, restore timestamp in case it was previously corrected
+        entity.vehicle.timestamp = prevTimestamps[entity.vehicle.trip.trip_id]
+
+# prune prevLocations and prevTimestamps of trip_ids no longer in the feed
+```
+
+The timestamp is also subject to abnormality at DST transitions, documented [here](DaylightSaving.md#gtfs-r-vehiclepos).
+
+### `vehicle.id`
+TfNSW claims 'these are carriage numbers which have been masked' and that seems to be either correct, or they're just completely random numbers. I've not been able to determine any correlation to real carriage numbers, and the numbers in this field change with every trip, even with the same physical vehicle. To some degree, this makes sense as the signalling systems which source the location data for this feed have no idea what carriages make up a train. As far as I know, train type/length swaps must be entered manually, and so set and carriage numbers are unlikely to be added.
