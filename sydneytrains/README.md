@@ -13,7 +13,7 @@ Beyond this area, the Sydney-Trains-controlled network extends to Newcastle Inte
 The sydneytrains [GTFS timetable - for realtime](https://opendata.transport.nsw.gov.au/dataset/public-transport-timetables-realtime) contains timetable data for all Sydney Trains and NSW TrainLink services, however NSW TrainLink diesel services are often better represented in the nswtrains timetable.
 
 ### GTFS-R
-There are two sydneytrains GTFS-R `vehiclepos` feeds. TfNSW recommends use of the v2 feed. The only data exclusive to v1 is [F and W freight trains](#f-and-w-sets), whereas v2 has coverage of more area, train type/length updates, and live occupancy(Waratah only).
+There are two sydneytrains GTFS-R `vehiclepos` feeds. TfNSW recommends use of the v2 feed. There's currently no data exclusive to v1 ([though there has been previously](#f-and-w-sets)), whereas v2 has coverage of more area, train type/length updates, and live occupancy(Waratah only).
 
 - [v1](https://opendata.transport.nsw.gov.au/dataset/public-transport-realtime-vehicle-positions): Covers all ATRICS territory, plus the `NIF` region.
 
@@ -36,11 +36,13 @@ Another NonTimetabled case is the form of `NonTimetabled.U001`, where 001 may be
 NonTimetabled vehicles only appear in the feeds when within ATRICS territory, and Mariyung/D set trains in [the `NIF` region](locations/README.md#nif).
 
 #### F and W sets
-On 18 November 2023 some freight trains, which used to exclusively report as NonTimetabled, changed to reporting with the standard passenger `trip_id` format, using the set types F or W, 0 carriages, and in the v1 feed only. W is defined as "Fast freight" by Sydney Trains, but F is not defined. Sydney Trains do define G for "Freight", however I've never seen it used.
+On 18 November 2023 some freight trains, which used to exclusively report as NonTimetabled, changed to reporting with the standard passenger `trip_id` format, using the set types F or W, 0 carriages, ~and in the v1 feed only~. W is defined as "Fast freight" by Sydney Trains, but F is not defined. Sydney Trains do define G for "Freight", however I've never seen it used.
 
 I haven't been able to find a pattern to the use of F or W, other than W being much more common. A given train will generally consistently appear as F, W or NonTimetabled day-to-day, and it seems that most trains that run to a consistent timetable appear as F or W, whereas irregular freight services generally remain as NonTimetabled.
 
-I was interested as to whether this change might mean that freight services would appear in the GTFS timetable or be visible outside ATRICS territory, however neither of these have eventuated.
+~I was interested as to whether this change might mean that freight services would appear in the GTFS timetable or be visible outside ATRICS territory, however neither of these have eventuated.~
+
+As of 27 April 2024, F and W sets are included in the v2 feed and are visible outside the ATRICS area, in the `SouthCoast` and `MetroNet` regions. So far, it seems that a single train may report with two slightly different trip_ids, one when within the ATRICS area, and another outside, so through-tracking will probably be easiest just by run number.
 
 ### `position` / `stop_id`
 None of the positions reported in the sydneytrains `vehiclepos` feed are directly sourced from onboard GPS. The `stop_id` field contains an ID consisting of a dot-separated region name and location, the lat/long of which are included in the `position` fields. Further detail is documented [here](locations/README.md).
