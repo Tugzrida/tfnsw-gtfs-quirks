@@ -60,7 +60,7 @@ Two notable misplaced locations:
 ### Liverpool
 - Merrylands – Liverpool
 
-`Liverpool.YA4 Entry Loc` and `Liverpool.YA4 Exit Loc` haven't reported since 27 Nov 2023/1 Feb 2024 respectively. This signal is at Yennora intermodal terminal which seems to currently be out of use.
+Qube ended their lease of the Yennora intermodal terminal in Nov 2023, hence `Liverpool.YA4 Entry Loc` and `Liverpool.YA4 Exit Loc` don't currently report regularly.
 
 ### Mountains
 - Doonside – Newnes Junction
@@ -128,7 +128,7 @@ MetroNet positions are derived from track-mounted transponders which transmit th
 
 ![MetroNet Transponder](../../images/metronet_transponder.png)
 
-As they depend on radio transmissions, MetroNet locations can sometimes be delayed or unreliable. The `vehiclepos` feed only includes MetroNet positions for trips included in the static GTFS timetable(or added ad-hoc in the `realtime` feed), meaning freight and maintenance vehicles are generally not shown.
+As they depend on radio transmissions, MetroNet locations can sometimes be delayed or unreliable. The `vehiclepos` feed only includes MetroNet positions for trips included in the static GTFS timetable(or added ad-hoc in the `realtime` feed), meaning freight(except for [F and W sets](../README.md#f-and-w-sets)) and maintenance vehicles are generally not shown.
 
 The MetroNet positioning system is still active across the Sydney Trains network, however due to its relative coarseness and unreliability, it's only incorporated into the `vehiclepos` feed for the areas above, where no other position source has been implemented.
 
