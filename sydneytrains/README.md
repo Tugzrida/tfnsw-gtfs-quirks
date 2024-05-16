@@ -44,6 +44,11 @@ I haven't been able to find a pattern to the use of F or W, other than W being m
 
 As of 27 April 2024, F and W sets are included in the v2 feed and are visible outside the ATRICS area, in the `SouthCoast` and `MetroNet` regions. So far, it seems that a single train may report with two slightly different trip_ids, one when within the ATRICS area, and another outside, so through-tracking will probably be easiest just by run number.
 
+#### Incorrect set types
+Often during disruptions, added or altered services will be labelled with the incorrect set type, most commonly A (which I assume is just the default being first alphabetically), but I've also seen X, [P](https://twitter.com/Tugzrida/status/1499549896474464259), and others.
+
+Somewhat relatedly, in March 2024 I began to see 86 class electric maintenance trains (run numbers `Exxx`) reporting as 0 car H sets. Previously they'd reported as [W sets](#f-and-w-sets) or NonTimetabled (which continues). These H set runs don't appear in the GTFS timetable. I've not been tracking whether this is happening to any other trains, maintenance or otherwise.
+
 ### `position` / `stop_id`
 None of the positions reported in the sydneytrains `vehiclepos` feed are directly sourced from onboard GPS. The `stop_id` field contains an ID consisting of a dot-separated region name and location, the lat/long of which are included in the `position` fields. Further detail is documented [here](locations/README.md).
 

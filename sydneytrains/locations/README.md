@@ -60,8 +60,6 @@ Two notable misplaced locations:
 ### Liverpool
 - Merrylands – Liverpool
 
-Qube ended their lease of the Yennora intermodal terminal in Nov 2023, hence `Liverpool.YA4 Entry Loc` and `Liverpool.YA4 Exit Loc` don't currently report regularly.
-
 ### Mountains
 - Doonside – Newnes Junction
 
