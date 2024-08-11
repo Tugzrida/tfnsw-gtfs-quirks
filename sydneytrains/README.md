@@ -82,5 +82,7 @@ for entity in vehiclepos.entity:
 
 The timestamp is also subject to abnormality at DST transitions, documented [here](DaylightSaving.md#gtfs-r-vehiclepos).
 
+Diesel passenger & freight trains in the `MetroNet` region sometimes report a timestamp 10 or 11 hours in the past, which I assume means that they report a timestamp to the MetroNet system in UTC whereas the electric trains report in local time, and a conversion to UTC somewhere along the line fixes the timestamp for electric trains but breaks it for diesels.
+
 ### `vehicle.id`
 TfNSW claims 'these are carriage numbers which have been masked' and that seems to be either correct, or they're just completely random numbers. I've not been able to determine any correlation to real carriage numbers, and the numbers in this field change with every trip, even with the same physical vehicle. To some degree, this makes sense as the signalling systems which source the location data for this feed have no idea what carriages make up a train. As far as I know, train type/length swaps must be entered manually, and so set and carriage numbers are unlikely to be added.
