@@ -7,7 +7,7 @@ Decommissioned and superseded locations are available in `old/`.
 
 A handful of locations report on [Null Island](https://en.wikipedia.org/wiki/Null_Island), mostly on the South Coast, where the limitation of reporting to timetabled services only means some of these locations(many of which are in sidings not normally used by passenger services) I've only seen once or twice the whole time I've been monitoring the feed. Through [DRKDs](https://railsafe.org.au/maps-and-appendices) and [other diagrams](https://www.sa-trackandsignal.net/), I've written descriptions(of varying certainty) of their location in `NullIslandDescriptions.csv`. I haven't assigned coordinates but will happily accept a PR if that's something you want to do :wink:.
 
-It should also be noted that the coordinates as reported in the feed are wrong for some locations. For example, the coordinates for `Sutherland.W1 Exit Loc` are only 3m away from `Sutherland.W79 Loc` despite the actual W1 signal being nearly 2km away. All the coordinates in my CSVs are as was most recently reported in the feed.
+It should also be noted that the coordinates as reported in the feed are wrong for some locations, notably two in the [Lidcombe region](#lidcombe), but there are others. All the coordinates in my CSVs are as was most recently reported in the feed.
 
 Where the location name is a signal number, this is generally the next signal the train will pass, and the coordinates are generally the location of that physical signal, that being the furthest forward a train could be while still reporting that position.
 
@@ -85,10 +85,8 @@ The Sefton region has a few locations in ARTC-operated territory near Sefton Par
 - Strathfield – Thornleigh
 
 ### Sutherland
-- Jannali – Heathcote
+- Jannali – Waterfall
 - Sutherland – Cronulla
-
-There is no coverage inside Waterfall yard, which extends approx 2km from Waterfall station in both directions. Terminating services stop updating after reaching `Sutherland.W1 Exit Loc` until they reach `Sutherland.SW22.6 Entry Loc` on their next trip. Through services resume updating after exiting the yard.
 
 ### Sydenham
 - Erskineville – Allawah

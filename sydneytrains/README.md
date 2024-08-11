@@ -4,7 +4,7 @@ An acronym I'll be using quite a lot here is ATRICS (Advanced Train Running Info
 - North: Vales Point (excl)
 - West: Newnes Junction (incl)
 - South: Macarthur (incl)
-- South Coast: Waterfall (excl)
+- South Coast: Waterfall (incl)
 
 Beyond this area, the Sydney-Trains-controlled network extends to Newcastle Interchange/Woodville Junction(North), Lithgow(West), and Bomaderry/Port Kembla (South Coast). Outside ATRICS territory, other systems such as push button panels, lever frames, and older computerised signalling interfaces are used.
 
