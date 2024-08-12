@@ -141,6 +141,8 @@ I don't have any sure knowledge of how these positions are derived, though given
 
 I've seen NIFs appear at these locations with both standard trip IDs and NonTimetabled IDs.
 
+No locations in the NIF region have reported since 24 June 2024, which seems to roughly coincide with a significant decrease in reliability of MetroNet location reports in the Wyee – Newcastle Interchange area.
+
 ### SouthCoast
 - Helensburgh – Kiama
 - Coniston – Port Kembla
