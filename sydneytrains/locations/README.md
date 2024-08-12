@@ -109,6 +109,8 @@ Similar to Sefton, the Sydenham region has a few locations on the ARTC-operated 
 - `Sydenham.CR711/SM708 LOC`
 - `Sydenham.CR717 LOC`
 
+Additionally, `Sydenham.G8.9 LOC` hasn't reported since 20 May 2024.
+
 ### Sydney
 - Macdonaldtown – Milsons Point
 - City Circle
@@ -154,7 +156,3 @@ Up line between Otford and Helensburgh:
 - `SouthCoast.METR-736`
 - `SouthCoast.OTFD-730`
 - `SouthCoast.OTFD-718-709`
-
-Down line between Waterfall and Helensburgh:
-- `SouthCoast.HELS-761`
-- `SouthCoast.HELS-758`
