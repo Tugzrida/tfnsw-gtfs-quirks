@@ -146,6 +146,9 @@ No locations in the NIF region have reported since 24 June 2024, which seems to 
 - Coniston – Port Kembla
 - Unanderra – Farmborough Heights
 
+> [!NOTE]
+> Since the transfer of control of the South Coast branch line to Homebush OMCC on 7 Sep 2024, trains have not reported between Dapto and Kiama (inclusive). I've [raised this](https://opendataforum.transport.nsw.gov.au/t/sydney-trains-vehiclepos-feed-is-missing-trains-south-of-dapto/4495) with the open data team and expect it to be fixed sooner or later.
+
 SouthCoast positions are, like ATRICS positions, derived from signalling, however only timetabled services are reported like in the MetroNet area.
 
 These locations haven't reported since 28 April 2023, along with some Sydenham locations:
