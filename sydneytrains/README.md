@@ -1,6 +1,6 @@
 # sydneytrains
 
-An acronym I'll be using quite a lot here is ATRICS (Advanced Train Running Information Control System). ATRICS is a computerised signalling interface being rolled out by Sydney Trains. The boundaries of ATRICS territory are (as of April 2024):
+An acronym I'll be using quite a lot here is ATRICS (Advanced Train Running Information Control System). ATRICS is a computerised signalling interface being rolled out by Sydney Trains. The boundaries of ATRICS territory are (as of July 2024):
 - North: Vales Point (excl)
 - West: Newnes Junction (incl)
 - South: Macarthur (incl)

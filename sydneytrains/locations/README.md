@@ -109,8 +109,6 @@ Similar to Sefton, the Sydenham region has a few locations on the ARTC-operated 
 - `Sydenham.CR711/SM708 LOC`
 - `Sydenham.CR717 LOC`
 
-Additionally, `Sydenham.G8.9 LOC` hasn't reported since 20 May 2024.
-
 ### Sydney
 - Macdonaldtown – Milsons Point
 - City Circle
