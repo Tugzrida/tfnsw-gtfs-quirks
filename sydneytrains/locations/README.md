@@ -93,7 +93,6 @@ The Sefton region has a few locations in ARTC-operated territory near Sefton Par
 ### Sydenham
 - Erskineville – Allawah
 - Erskineville – Bondi Junction
-- Sydenham – Hurlstone Park
 - Meeks Rd Junction
 - ARTC interface Sydenham, Botany (limited)
 - Tempe – Turrella
