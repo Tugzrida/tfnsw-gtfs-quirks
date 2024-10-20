@@ -21,8 +21,10 @@ Within ATRICS territory, positions are derived from signalling (track circuits, 
 - Seven Hills – Blacktown
 - Blacktown – Richmond
 
-### CampsieBankstown
+### CampsieBankstown (decommissioned)
 - Canterbury – Birrong
+
+Decommissioned September 2024 with Metro conversion, Birrong – Bankstown transferred to Sefton.
 
 ### CentralCoast
 - Woy Woy – Wyee
@@ -75,7 +77,7 @@ Two notable misplaced locations:
 
 ### Sefton
 - Berala – Carramar
-- Regents Park – Birrong
+- Regents Park – Bankstown
 - ARTC interface Sefton Park (limited)
 
 The Sefton region has a few locations in ARTC-operated territory near Sefton Park Junction and Leightonfield freight yard, which I assume are pushed from ARTC's Phoenix control system to ATRICS for the convenience of signallers accepting movements across the track interface. The resolution of locations here is much lower than on the Sydney Trains network; only a select few locations are pushed.
