@@ -9,7 +9,7 @@ An acronym I'll be using quite a lot here is ATRICS (Advanced Train Running Info
 > [!NOTE]
 > Technically, the `SouthCoast` region (Helensburgh to Port Kembla and Unanderra) is still currently controlled via push-button panel at Wollongong, not ATRICS, however on 2 November 2024 it seems that GTFS-R position reporting for `SouthCoast` was moved to the ATRICS pipeline in preparation for further rollout of ATRICS control in the area. For this reason I'm now considering `SouthCoast` to be an ATRICS region for the purposes of this documentation.
 
-In total, the Sydney-Trains-controlled network extends to Newcastle Interchange/Woodville Junction(North), Lithgow(West), and Bomaderry/Port Kembla (South Coast). Outside ATRICS territory, other systems such as push button panels, lever frames, and older computerised signalling interfaces are used.
+Beyond ATRICS territory, the Sydney-Trains-controlled network extends to Newcastle Interchange/Woodville Junction(North), Lithgow(West), and Bomaderry(South Coast). Outside ATRICS territory, other systems such as push button panels, lever frames, and older computerised signalling interfaces are used.
 
 ## Coverage
 ### GTFS timetable
