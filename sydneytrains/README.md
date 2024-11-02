@@ -1,12 +1,15 @@
 # sydneytrains
 
-An acronym I'll be using quite a lot here is ATRICS (Advanced Train Running Information Control System). ATRICS is a computerised signalling interface being rolled out by Sydney Trains. The boundaries of ATRICS territory are (as of July 2024):
+An acronym I'll be using quite a lot here is ATRICS (Advanced Train Running Information Control System). ATRICS is a computerised signalling interface being rolled out by Sydney Trains. The boundaries of ATRICS territory are (as of September 2024):
 - North: Vales Point (excl)
 - West: Newnes Junction (incl)
 - South: Macarthur (incl)
-- South Coast: Waterfall (incl)
+- South Coast: Kiama (incl)
 
-Beyond this area, the Sydney-Trains-controlled network extends to Newcastle Interchange/Woodville Junction(North), Lithgow(West), and Bomaderry/Port Kembla (South Coast). Outside ATRICS territory, other systems such as push button panels, lever frames, and older computerised signalling interfaces are used.
+> [!NOTE]
+> Technically, the `SouthCoast` region (Helensburgh to Port Kembla and Unanderra) is still currently controlled via push-button panel at Wollongong, not ATRICS, however on 2 November 2024 it seems that GTFS-R position reporting for `SouthCoast` was moved to the ATRICS pipeline in preparation for further rollout of ATRICS control in the area. For this reason I'm now considering `SouthCoast` to be an ATRICS region for the purposes of this documentation.
+
+In total, the Sydney-Trains-controlled network extends to Newcastle Interchange/Woodville Junction(North), Lithgow(West), and Bomaderry/Port Kembla (South Coast). Outside ATRICS territory, other systems such as push button panels, lever frames, and older computerised signalling interfaces are used.
 
 ## Coverage
 ### GTFS timetable
@@ -17,7 +20,7 @@ There are two sydneytrains GTFS-R `vehiclepos` feeds. TfNSW recommends use of th
 
 - [v1](https://opendata.transport.nsw.gov.au/dataset/public-transport-realtime-vehicle-positions): Covers all ATRICS territory, plus the `NIF` region.
 
-- [v2](https://opendata.transport.nsw.gov.au/dataset/public-transport-realtime-vehicle-positions-v2): Covers all ATRICS territory, plus the `NIF`, `MetroNet` & `SouthCoast` regions. This represents all of the Sydney-Trains-controlled network except Kiama–Bomaderry, which is also the only unelectrified region controlled by Sydney Trains.
+- [v2](https://opendata.transport.nsw.gov.au/dataset/public-transport-realtime-vehicle-positions-v2): Covers all ATRICS territory, plus the `NIF` & `MetroNet` regions. This represents all of the Sydney-Trains-controlled network except Kiama–Bomaderry, which is also the only unelectrified region controlled by Sydney Trains.
 
 More details on regions and locations can be found [here](locations/README.md).
 
@@ -42,7 +45,7 @@ I haven't been able to find a pattern to the use of F or W, other than W being m
 
 ~I was interested as to whether this change might mean that freight services would appear in the GTFS timetable or be visible outside ATRICS territory, however neither of these have eventuated.~
 
-As of 27 April 2024, F and W sets are included in the v2 feed and are visible outside the ATRICS area, in the `SouthCoast` and `MetroNet` regions. So far, it seems that a single train may report with two slightly different trip_ids, one when within the ATRICS area, and another outside, so through-tracking will probably be easiest just by run number.
+As of 27 April 2024, F and W sets are included in the v2 feed and are visible outside the ATRICS area, in the `MetroNet` region. So far, it seems that a single train may report with two slightly different trip_ids, one when within the ATRICS area, and another outside, so through-tracking will probably be easiest just by run number.
 
 #### Incorrect set types
 Often during disruptions, added or altered services will be labelled with the incorrect set type, most commonly A (which I assume is just the default being first alphabetically), but I've also seen X, [P](https://twitter.com/Tugzrida/status/1499549896474464259), and others.

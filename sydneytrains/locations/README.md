@@ -5,7 +5,7 @@ Many locations across the network are only triggered quite rarely, for example i
 
 Decommissioned and superseded locations are available in `old/`.
 
-A handful of locations report on [Null Island](https://en.wikipedia.org/wiki/Null_Island), mostly on the South Coast, where the limitation of reporting to timetabled services only means some of these locations(many of which are in sidings not normally used by passenger services) I've only seen once or twice the whole time I've been monitoring the feed. Through [DRKDs](https://railsafe.org.au/maps-and-appendices) and [other diagrams](https://www.sa-trackandsignal.net/), I've written descriptions(of varying certainty) of their location in `NullIslandDescriptions.csv`. I haven't assigned coordinates but will happily accept a PR if that's something you want to do :wink:.
+A handful of locations report on [Null Island](https://en.wikipedia.org/wiki/Null_Island), mostly on the South Coast. Some of these locations(many of which are in sidings not normally used by passenger services) I've only seen once or twice the whole time I've been monitoring the feed. Through [DRKDs](https://railsafe.org.au/maps-and-appendices) and [other diagrams](https://www.sa-trackandsignal.net/), I've written descriptions(of varying certainty) of their location in `NullIslandDescriptions.csv`. I haven't assigned coordinates but will happily accept a PR if that's something you want to do :wink:.
 
 It should also be noted that the coordinates as reported in the feed are wrong for some locations, notably two in the [Lidcombe region](#lidcombe), but there are others. All the coordinates in my CSVs are as was most recently reported in the feed.
 
@@ -82,6 +82,11 @@ Two notable misplaced locations:
 
 The Sefton region has a few locations in ARTC-operated territory near Sefton Park Junction and Leightonfield freight yard, which I assume are pushed from ARTC's Phoenix control system to ATRICS for the convenience of signallers accepting movements across the track interface. The resolution of locations here is much lower than on the Sydney Trains network; only a select few locations are pushed.
 
+### SouthCoast
+- Helensburgh – Unanderra
+- Coniston – Port Kembla
+- Unanderra – Farmborough Heights
+
 ### Strathfield
 - Strathfield – Homebush
 - Strathfield – Thornleigh
@@ -115,6 +120,9 @@ Similar to Sefton, the Sydenham region has a few locations on the ARTC-operated 
 - City Circle
 - Sydney yard (Central)
 
+### Wollongong
+- Unanderra – Kiama
+
 
 ## Non-ATRICS regions
 ### MetroNet
@@ -141,22 +149,3 @@ I don't have any sure knowledge of how these positions are derived, though given
 I've seen NIFs appear at these locations with both standard trip IDs and NonTimetabled IDs.
 
 No locations in the NIF region have reported since 24 June 2024, which seems to roughly coincide with a significant decrease in reliability of MetroNet location reports in the Wyee – Newcastle Interchange area.
-
-### SouthCoast
-- Helensburgh – Kiama
-- Coniston – Port Kembla
-- Unanderra – Farmborough Heights
-
-> [!NOTE]
-> Since the transfer of control of the South Coast branch line to Homebush OMCC on 7 Sep 2024, trains have not reported between Dapto and Kiama (inclusive). I've [raised this](https://opendataforum.transport.nsw.gov.au/t/sydney-trains-vehiclepos-feed-is-missing-trains-south-of-dapto/4495) with the open data team and expect it to be fixed sooner or later.
-
-SouthCoast positions are, like ATRICS positions, derived from signalling, however only timetabled services are reported like in the MetroNet area.
-
-These locations haven't reported since 28 April 2023, along with some Sydenham locations:
-
-Up line between Otford and Helensburgh:
-- `SouthCoast.HELS-746-741`
-- `SouthCoast.METR-737`
-- `SouthCoast.METR-736`
-- `SouthCoast.OTFD-730`
-- `SouthCoast.OTFD-718-709`
