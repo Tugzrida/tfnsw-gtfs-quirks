@@ -87,6 +87,15 @@ The Sefton region has a few locations in ARTC-operated territory near Sefton Par
 - Coniston – Port Kembla
 - Unanderra – Farmborough Heights
 
+With the introduction of the `Wollongong` region and moving of `SouthCoast` to the ATRICS location pipeline in November 2024, the following locations stopped reporting:
+
+- `SouthCoast.COAL-642`
+- `SouthCoast.COAL-640-633`
+- `SouthCoast.COAL-632-629`
+- `SouthCoast.WOLL-1007`
+- `SouthCoast.COAL-627`
+- `SouthCoast.WOLL-112`
+
 ### Strathfield
 - Strathfield – Homebush
 - Strathfield – Thornleigh
