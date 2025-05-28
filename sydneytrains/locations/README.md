@@ -148,10 +148,10 @@ The MetroNet positioning system is still active across the Sydney Trains network
 
 There is also the location `MetroNet.506` which, based on the trains that pass it, I've deduced to be on 255 points near Coniston station on the South Coast, however it reports coordinates nearly 190km away on an unelectrified part of the Hunter line near Hamilton. Given that this is the only MetroNet location reported on the South Coast, I can only assume it's included by mistake.
 
-### NIF
+### NIF (decommissioned)
 - Wyong – Newcastle Interchange
 
-In November 2023, locations of the form `NIF.CCN2_0200` began appearing on the Central Coast & Newcastle line, where `CCN1` seems to be locations on the down line, and `CCN2` ones on the up line. These locations are only reported for New Intercity Fleet (aka D set, Mariyung) trains and given the coverage area I suspect this is a replacement for MetroNet, though NIFs did report MetroNet locations prior to this change, and still continue to afterwards (though much less frequently than prior to the change and other trains do).
+In November 2023, locations of the form `NIF.CCN2_0200` began appearing on the Central Coast & Newcastle line, where `CCN1` seems to be locations on the down line, and `CCN2` ones on the up line. These locations were only reported for New Intercity Fleet (aka D set, Mariyung) trains and given the coverage area I suspect this was a trial replacement for MetroNet, though NIFs did report MetroNet locations prior to this change, and still continue to afterwards (though much less frequently than prior to the change and other trains do).
 
 I don't have any sure knowledge of how these positions are derived, though given they have a higher density than MetroNet and each location name still correlates with an exact pair of coordinates, my guess is that they are based on ATP balises, possibly with some input from onboard GPS.
 

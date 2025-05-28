@@ -16,7 +16,7 @@ Beyond ATRICS territory, the Sydney-Trains-controlled network extends to Newcast
 The sydneytrains [GTFS timetable - for realtime](https://opendata.transport.nsw.gov.au/dataset/public-transport-timetables-realtime) contains timetable data for all Sydney Trains and NSW TrainLink services, however NSW TrainLink diesel services are often better represented in the nswtrains timetable.
 
 ### GTFS-R
-The sydneytrains GTFS-R [`vehiclepos` feed](https://opendata.transport.nsw.gov.au/dataset/public-transport-realtime-vehicle-positions-v2) covers all ATRICS territory, plus the `NIF` & `MetroNet` regions. This represents all of the Sydney-Trains-controlled network except Kiama–Bomaderry, which is also the only unelectrified region controlled by Sydney Trains.
+The sydneytrains GTFS-R [`vehiclepos` feed](https://opendata.transport.nsw.gov.au/dataset/public-transport-realtime-vehicle-positions-v2) covers all ATRICS territory, plus the `MetroNet` region. This represents all of the Sydney-Trains-controlled network except Kiama–Bomaderry, which is also the only unelectrified region controlled by Sydney Trains.
 
 The previous v1 `vehiclepos` feed was decommissioned on 27 May 2025, at which point it was a strict subset of the functionality provided by v2.
 
@@ -34,7 +34,7 @@ There is also usually a surge in NonTimetabled vehicles overnight when the syste
 
 Another NonTimetabled case is the form of `NonTimetabled.U001`, where 001 may be any three digits. I don't know what the U is supposed to stand for, but in my mind it's 'undescribed', as these will often appear at the exit from a yard when a train is waiting on the track and the signaller hasn't yet labelled it with its run number.
 
-NonTimetabled vehicles only appear in the feeds when within ATRICS territory, and Mariyung/D set trains in [the `NIF` region](locations/README.md#nif).
+NonTimetabled vehicles only appear in the feeds when within ATRICS territory.
 
 #### F and W sets
 On 18 November 2023 some freight trains, which used to exclusively report as NonTimetabled, changed to reporting with the standard passenger `trip_id` format, using the set types F or W, 0 carriages, ~and in the v1 feed only~. W is defined as "Fast freight" by Sydney Trains, but F is not defined. Sydney Trains do define G for "Freight", however I've never seen it used.
