@@ -16,11 +16,9 @@ Beyond ATRICS territory, the Sydney-Trains-controlled network extends to Newcast
 The sydneytrains [GTFS timetable - for realtime](https://opendata.transport.nsw.gov.au/dataset/public-transport-timetables-realtime) contains timetable data for all Sydney Trains and NSW TrainLink services, however NSW TrainLink diesel services are often better represented in the nswtrains timetable.
 
 ### GTFS-R
-There are two sydneytrains GTFS-R `vehiclepos` feeds. TfNSW recommends use of the v2 feed. There's currently no data exclusive to v1 ([though there has been previously](#f-and-w-sets)), whereas v2 has coverage of more area, train type/length updates, and live occupancy(Waratah only).
+The sydneytrains GTFS-R [`vehiclepos` feed](https://opendata.transport.nsw.gov.au/dataset/public-transport-realtime-vehicle-positions-v2) covers all ATRICS territory, plus the `NIF` & `MetroNet` regions. This represents all of the Sydney-Trains-controlled network except Kiama–Bomaderry, which is also the only unelectrified region controlled by Sydney Trains.
 
-- [v1](https://opendata.transport.nsw.gov.au/dataset/public-transport-realtime-vehicle-positions): Covers all ATRICS territory, plus the `NIF` region.
-
-- [v2](https://opendata.transport.nsw.gov.au/dataset/public-transport-realtime-vehicle-positions-v2): Covers all ATRICS territory, plus the `NIF` & `MetroNet` regions. This represents all of the Sydney-Trains-controlled network except Kiama–Bomaderry, which is also the only unelectrified region controlled by Sydney Trains.
+The previous v1 `vehiclepos` feed was decommissioned on 27 May 2025, at which point it was a strict subset of the functionality provided by v2.
 
 More details on regions and locations can be found [here](locations/README.md).
 
