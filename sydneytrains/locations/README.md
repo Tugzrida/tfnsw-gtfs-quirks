@@ -5,9 +5,9 @@ Many locations across the network are only triggered quite rarely, for example i
 
 Decommissioned and superseded locations are available in `old/`.
 
-A handful of locations report on [Null Island](https://en.wikipedia.org/wiki/Null_Island), mostly on the South Coast. Some of these locations(many of which are in sidings not normally used by passenger services) I've only seen once or twice the whole time I've been monitoring the feed. Through [DRKDs](https://railsafe.org.au/maps-and-appendices) and [other diagrams](https://www.sa-trackandsignal.net/), I've written descriptions(of varying certainty) of their location in `NullIslandDescriptions.csv`. I haven't assigned coordinates but will happily accept a PR if that's something you want to do :wink:.
+A handful of locations report on [Null Island](https://en.wikipedia.org/wiki/Null_Island), mostly on the South Coast. Some of these locations(many of which are in sidings not normally used by passenger services) I've only seen once or twice the whole time I've been monitoring the feed. Through [DRKDs](https://railsafe.org.au/maps-and-appendices) and [other diagrams](https://www.sa-trackandsignal.net/), I've written descriptions(of varying certainty) of their location in `NullIslandDescriptions.csv`.
 
-It should also be noted that the coordinates as reported in the feed are wrong for some locations, notably two in the [Lidcombe region](#lidcombe), but there are others. All the coordinates in my CSVs are as was most recently reported in the feed.
+It should also be noted that the coordinates as reported in the feed are wrong for some locations, notably two in the [Lidcombe region](#lidcombe), but there are others. All the coordinates in the region CSVs are as was most recently reported in the feed, and `Corrected.csv` contains coordinates I've fixed manually.
 
 Where the location name is a signal number, this is generally the next signal the train will pass, and the coordinates are generally the location of that physical signal, that being the furthest forward a train could be while still reporting that position.
 
