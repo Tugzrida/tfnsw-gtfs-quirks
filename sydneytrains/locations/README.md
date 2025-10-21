@@ -111,8 +111,6 @@ With the introduction of the `Wollongong` region and moving of `SouthCoast` to t
 - ARTC interface Sydenham, Botany (limited)
 - Tempe – Turrella
 
-Martin Place turnback is currently booked out of use, `Sydenham.SY730 Loc` hasn't reported since 18 July 2023.
-
 Similar to Sefton, the Sydenham region has a few locations on the ARTC-operated Goods and Botany lines, though the following locations haven't reported since 28 April 2023 for no reason I've been able to figure out (oddly enough some SouthCoast locations also stopped reporting at the same time):
 
 - `Sydenham.CR720 LOC`
