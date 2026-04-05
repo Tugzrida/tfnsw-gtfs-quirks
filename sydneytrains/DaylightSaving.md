@@ -2,25 +2,25 @@
 ### GTFS timetable
 Timestamps in general are covered in a somewhat novel way in the timetable: times may extend beyond 23:59 to indicate services running into the next day. There is one additional quirk with regards to DST, which is documented by TfNSW but took me a while to figure out: timestamps are counted since "midday minus 12 hours", which most of the time is midnight, and so matches local time. However on the day where DST ends, there are 13 hours between midnight and noon and so timestamps are as follows:
 
-| Timestamp(previous day) | Timestamp(transition day) | AEDT  | AEST  |
-|-------------------------|---------------------------|-------|-------|
-| 23:00                   |                           | 23:00 |       |
-| 24:00                   |                           | 00:00 |       |
-| 25:00                   | 00:00                     | 01:00 |       |
-| 26:00                   | 01:00                     | 02:00 |       |
-| 27:00                   | 02:00                     |       | 02:00 |
-| 28:00                   | 03:00                     |       | 03:00 |
+| Timestamp(previous day) | Timestamp(transition day) | AEDT  | AEST  | UTC   |
+|-------------------------|---------------------------|-------|-------|-------|
+| 23:00                   |                           | 23:00 |       | 12:00 |
+| 24:00                   |                           | 00:00 |       | 13:00 |
+| 25:00                   | 00:00                     | 01:00 |       | 14:00 |
+| 26:00                   | 01:00                     | 02:00 |       | 15:00 |
+| 27:00                   | 02:00                     |       | 02:00 | 16:00 |
+| 28:00                   | 03:00                     |       | 03:00 | 17:00 |
 
 When DST starts, there are only 11 hours between midnight and noon, and so:
 
-| Timestamp(previous day) | Timestamp(transition day) | AEST  | AEDT  |
-|-------------------------|---------------------------|-------|-------|
-| 23:00                   | 00:00                     | 23:00 |       |
-| 24:00                   | 01:00                     | 00:00 |       |
-| 25:00                   | 02:00                     | 01:00 |       |
-| 26:00                   | 03:00                     |       | 03:00 |
-| 27:00                   | 04:00                     |       | 04:00 |
-| 28:00                   | 05:00                     |       | 05:00 |
+| Timestamp(previous day) | Timestamp(transition day) | AEST  | AEDT  | UTC   |
+|-------------------------|---------------------------|-------|-------|-------|
+| 23:00                   | 00:00                     | 23:00 |       | 13:00 |
+| 24:00                   | 01:00                     | 00:00 |       | 14:00 |
+| 25:00                   | 02:00                     | 01:00 |       | 15:00 |
+| 26:00                   | 03:00                     |       | 03:00 | 16:00 |
+| 27:00                   | 04:00                     |       | 04:00 | 17:00 |
+| 28:00                   | 05:00                     |       | 05:00 | 18:00 |
 
 
 ### GTFS-R vehiclepos
